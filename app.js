@@ -9,4 +9,9 @@ addNumber();
 
 
 
+multiply = () => {
+    newNumber *= 4;
+    console.log(newNumber)
+}
 
+multiply() 
