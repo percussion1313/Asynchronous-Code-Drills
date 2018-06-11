@@ -40,11 +40,11 @@ countdown = (num, callback) => {
     for (n = num; num > 0; num--) {
         console.log(num)
     }
-    return callback;
+    return callback();
 }
 
 done = () => {
     console.log('DONE')
 }
 
-countdown(10,done)
+countdown(10, done)
