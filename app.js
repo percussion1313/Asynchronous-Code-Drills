@@ -15,3 +15,9 @@ multiply = () => {
 }
 
 multiply() 
+
+setTimeout(() => {
+    multiply();
+   }, 2000);
+
+
