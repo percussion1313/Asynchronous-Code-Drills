@@ -1,4 +1,5 @@
-let newNumber = [];
+//Async
+/*let newNumber = [];
 
 addNumber = () => {
     let i = Math.floor(Math.random() * 10);
@@ -18,6 +19,7 @@ setTimeout(() => {
     multiply();
 }, 2000);
 
+//Callbacks
 //Word 3 and 2 will be last due to setTimeout();
 getWords = () => {
     console.log('Word 1');
@@ -30,5 +32,19 @@ getWords = () => {
     console.log('Word 4');
 }
 
-getWords();
+getWords();*/
 
+
+
+countdown = (num, callback) => {
+    for (n = num; num > 0; num--) {
+        console.log(num)
+    }
+    return callback;
+}
+
+done = () => {
+    console.log('DONE')
+}
+
+countdown(10,done)
