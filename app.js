@@ -1,7 +1,7 @@
 let newNumber = [];
 
 addNumber = () => {
-    let i = Math.floor(Math.random()*10);
+    let i = Math.floor(Math.random() * 10);
     console.log(i);
     newNumber.push(i);
 }
@@ -14,10 +14,21 @@ multiply = () => {
     console.log(newNumber)
 }
 
-multiply() 
-
 setTimeout(() => {
     multiply();
-   }, 2000);
+}, 2000);
 
+//Word 3 and 2 will be last due to setTimeout();
+getWords = () => {
+    console.log('Word 1');
+    setTimeout(() => {
+        console.log('Word 2');
+    }, 2000);
+    setTimeout(() => {
+        console.log('Word 3');
+    }, 1000);
+    console.log('Word 4');
+}
+
+getWords();
 
