@@ -58,14 +58,13 @@ err = 'This did not work correctly';
 
 orderChickenSandwich = () => {
     return new Promise((resolve, reject) => {
-        let newFood = {
-            sandwich: 'chicken',
-            veggies: 'lettuce'
-        }
         if (globalVar === true) {
+            let newFood = {
+                sandwich: 'chicken',
+                veggies: 'lettuce'
+            }
             resolve(newFood);
-        }
-        else {
+        } else {
             reject(err)
         }
     }
@@ -74,10 +73,11 @@ orderChickenSandwich = () => {
 
 
 
-let orderFood = () => orderChickenSandwich().then(function (resolve) {
+let orderFood =  orderChickenSandwich();
+
+orderFood.then(function (resolve) {
     console.log(resolve)
 }, (err) => {
     console.log(err);
 })
 
-orderFood();
