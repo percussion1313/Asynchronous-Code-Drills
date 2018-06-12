@@ -32,11 +32,11 @@ getWords = () => {
     console.log('Word 4');
 }
 
-getWords();*/
+getWords();
 
 
 
-/*countdown = (num, callback) => {
+countdown = (num, callback) => {
     setTimeout(function () {
         console.log(num);
         num--
@@ -50,7 +50,7 @@ done = () => {
     console.log('DONE')
 }
 
-countdown(10, done)*/
+countdown(10, done)
 
 //Promises
 globalVar = true;
@@ -79,5 +79,25 @@ orderFood.then(function (resolve) {
     console.log(resolve)
 }, (err) => {
     console.log(err);
-})
+})*/
 
+//Promise Chaining
+
+let num = 1
+
+let newResult = function(){
+    return new Promise(function(resolve) {
+    setTimeout(() => resolve(num), 2000);
+  }).then(function(result) { 
+    console.log(result); 
+    return result * 2;
+  }).then(function(result) {  
+    console.log(result); 
+    return result * 4;
+  }).then(function(result) { 
+    console.log(result); 
+    return result * 6;  
+  });
+}
+
+newResult()
