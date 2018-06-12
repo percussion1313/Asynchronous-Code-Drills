@@ -96,8 +96,10 @@ let newResult = function(){
     return result * 4;
   }).then(function(result) { 
     console.log(result); 
-    return result * 6;  
-  });
+    return result * 6;
+  }).then(function(result) { 
+    console.log(result);
+    });
 }
 
 newResult()
