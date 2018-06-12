@@ -1,5 +1,5 @@
 //Async
-/*let newNumber = [];
+let newNumber = [];
 
 addNumber = () => {
     let i = Math.floor(Math.random() * 10);
@@ -36,21 +36,26 @@ getWords();
 
 
 
-countdown = (num, callback) => {
-    setTimeout(function () {
+
+function countdown(num,callback) {
+
+    var countdownTimer = setInterval(function() {
         console.log(num);
         num--
-        if (num === 0) {
+        if (num <= 0) {
+            clearInterval(countdownTimer);
             return callback();
         }
     }, 1000);
 }
 
 done = () => {
-    console.log('DONE')
+    setTimeout(() => {
+        console.log('Done')
+    }, 1000) 
 }
 
-countdown(10, done)
+countdown(10, done); 
 
 //Promises
 globalVar = true;
@@ -79,26 +84,26 @@ orderFood.then(function (resolve) {
     console.log(resolve)
 }, (err) => {
     console.log(err);
-})*/
+})
 
 //Promise Chaining
 
 let num = 1
 
-let newResult = function(){
-    return new Promise(function(resolve) {
-    setTimeout(() => resolve(num), 2000);
-  }).then(function(result) { 
-    console.log(result); 
-    return result * 2;
-  }).then(function(result) {  
-    console.log(result); 
-    return result * 4;
-  }).then(function(result) { 
-    console.log(result); 
-    return result * 6;
-  }).then(function(result) { 
-    console.log(result);
+let newResult = function () {
+    return new Promise(function (resolve) {
+        setTimeout(() => resolve(num), 2000);
+    }).then((result) => {
+        console.log(result);
+        return result * 2;
+    }).then((result) => {
+        setTimeout(() => console.log(result), 2000);
+        return result * 4;
+    }).then((result) => {
+        setTimeout(() => console.log(result), 4000);
+        return result * 6;
+    }).then((result) => {
+        setTimeout(() => console.log(result), 6000);
     });
 }
 
