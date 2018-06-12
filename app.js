@@ -36,15 +36,48 @@ getWords();*/
 
 
 
-countdown = (num, callback) => {
-    for (n = num; num > 0; num--) {
-        console.log(num)
-    }
-    return callback();
+/*countdown = (num, callback) => {
+    setTimeout(function () {
+        console.log(num);
+        num--
+        if (num === 0) {
+            return callback();
+        }
+    }, 1000);
 }
 
 done = () => {
     console.log('DONE')
 }
 
-countdown(10, done)
+countdown(10, done)*/
+
+//Promises
+globalVar = true;
+err = 'This did not work correctly';
+
+orderChickenSandwich = () => {
+    return new Promise((resolve, reject) => {
+        let newFood = {
+            sandwich: 'chicken',
+            veggies: 'lettuce'
+        }
+        if (globalVar === true) {
+            resolve(newFood);
+        }
+        else {
+            reject(err)
+        }
+    }
+    );
+}
+
+
+
+let orderFood = () => orderChickenSandwich().then(function (resolve) {
+    console.log(resolve)
+}, (err) => {
+    console.log(err);
+})
+
+orderFood();
